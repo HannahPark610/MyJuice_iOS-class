@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OJh-7O-Obw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="cBY-lw-XxV">
+            <objects>
+                <tableViewController id="OJh-7O-Obw" customClass="TableViewController" customModule="MyJuice_HS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRR-IN-EXK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="OJh-7O-Obw" id="O7X-Ez-f5Q"/>
+                            <outlet property="delegate" destination="OJh-7O-Obw" id="EVY-Pz-N9N"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="33r-fT-xWf" kind="show" identifier="showIngredientSegue" id="ZMy-2f-3SF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mja-LZ-Q1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1158" y="139"/>
+        </scene>
+        <!--Ingredient Detail View Controller-->
+        <scene sceneID="q6F-1f-fKs">
+            <objects>
+                <viewController id="33r-fT-xWf" customClass="IngredientDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="And-zn-LoE"/>
+                        <viewControllerLayoutGuide type="bottom" id="dqZ-lk-xqm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="showIngredient" id="AkZ-ha-eib">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="YOU CHOOSE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-r2-Bn7">
+                                <rect key="frame" x="120" y="103" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="MoveCustomCell1" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-b0-TRW">
+                                <rect key="frame" x="66" y="182" width="100" height="100"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCr-ya-NyU">
+                                <rect key="frame" x="209" y="182" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-I1-ELr">
+                                <rect key="frame" x="137" y="318" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSJ-GQ-3xq">
+                                <rect key="frame" x="164" y="457" width="56" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gM6-9S-fIh">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="VZo-Mt-Oe5"/>
+                                    <tabBarItem systemItem="more" id="uuh-Tp-lIi"/>
+                                </items>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-Gw-Nst">
+                                <rect key="frame" x="72" y="584" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Before">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcl-4Y-mc1">
+                                <rect key="frame" x="265" y="584" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJo-b0-TRW" firstAttribute="centerY" secondItem="AkZ-ha-eib" secondAttribute="centerY" id="HPE-hL-Vdx"/>
+                            <constraint firstItem="pJo-b0-TRW" firstAttribute="leading" secondItem="AkZ-ha-eib" secondAttribute="leadingMargin" constant="50" id="jzJ-So-5eV"/>
+                            <constraint firstItem="pJo-b0-TRW" firstAttribute="top" secondItem="And-zn-LoE" secondAttribute="bottom" constant="162" id="ko7-ed-gmU"/>
+                            <constraint firstItem="pJo-b0-TRW" firstAttribute="centerX" secondItem="AkZ-ha-eib" secondAttribute="centerX" id="oce-Yh-eJM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pJo-b0-TRW" secondAttribute="trailing" constant="193" id="vUp-0H-Abt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Ingredient1" destination="pJo-b0-TRW" id="9fj-Af-M6c"/>
+                        <outlet property="Ingredient2" destination="uCr-ya-NyU" id="Exo-sD-lLG"/>
+                        <outlet property="Ingredient3" destination="IA8-I1-ELr" id="04U-xY-Oo1"/>
+                        <outlet property="IngredientPrice" destination="WSJ-GQ-3xq" id="yoJ-dl-ARp"/>
+                        <outlet property="ingredient1ImageView" destination="pJo-b0-TRW" id="rdh-VA-Wmd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4j-TL-iEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="139"/>
+        </scene>
+    </scenes>
+</document>
