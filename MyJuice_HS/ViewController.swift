@@ -92,7 +92,12 @@ class TableViewController: UITableViewController{
     }
   }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "showIngredientSegue", sender: self)
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Row \(indexPath.row)selected")
         selectedImage = arrayOfCellData[indexPath.row].image
@@ -104,6 +109,5 @@ class TableViewController: UITableViewController{
             _ = segue.destination as! IngredientDetailViewController
         }
     }
-    
-}
 
+}
