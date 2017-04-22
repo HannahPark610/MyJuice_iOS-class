@@ -8,9 +8,17 @@
 
 import UIKit
 
-class TableViewCell_Ingredient1: UITableViewCell {
+
+
+class TableViewCell_Ingredient1: UITableViewCell, UITableViewDelegate {
+    
+    var atai:AnyObject?
 
     @IBOutlet weak var Ingredient1: UIImageView!
     @IBOutlet weak var Ingredient_label1: UILabel!
     
+    func viewDidLoad() {
+    
+
+    }
 }

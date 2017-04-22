@@ -10,6 +10,8 @@ import UIKit
 
 class IngredientDetailViewController: UIViewController {
     
+    var image: String?
+    
     @IBOutlet var Ingredient1: UIImageView!
     @IBOutlet var Ingredient2: UIImageView!
     @IBOutlet var Ingredient3: UIImageView!
@@ -20,8 +22,10 @@ class IngredientDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.image!)
         
-        Ingredient1.image = UIImage()
+        Ingredient1.image = UIImage(named: self.image! )
+        
     }
     
     

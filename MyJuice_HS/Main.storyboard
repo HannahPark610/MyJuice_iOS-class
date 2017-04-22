@@ -23,18 +23,15 @@
                             <outlet property="delegate" destination="OJh-7O-Obw" id="EVY-Pz-N9N"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="33r-fT-xWf" kind="show" identifier="showIngredientSegue" id="ZMy-2f-3SF"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mja-LZ-Q1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1158" y="139"/>
+            <point key="canvasLocation" x="-1578" y="130"/>
         </scene>
         <!--Ingredient Detail View Controller-->
         <scene sceneID="q6F-1f-fKs">
             <objects>
-                <viewController id="33r-fT-xWf" customClass="IngredientDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IngredientDetail" id="33r-fT-xWf" customClass="IngredientDetailViewController" customModule="MyJuice_HS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="And-zn-LoE"/>
                         <viewControllerLayoutGuide type="bottom" id="dqZ-lk-xqm"/>
@@ -112,58 +109,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4j-TL-iEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-462" y="139"/>
-        </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="McF-mI-Gol">
-            <objects>
-                <collectionViewController id="rdc-3z-Hmb" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6I2-7J-d7F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foN-6A-FrG">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WX2-nC-GVa">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="rdc-3z-Hmb" id="SVF-zg-ui1"/>
-                            <outlet property="delegate" destination="rdc-3z-Hmb" id="NHo-bv-9Oo"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uRP-ZT-Il5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-463" y="811"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="eJQ-AV-hlS">
-            <objects>
-                <viewController id="cVi-Cf-HOS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Knt-zA-3pE"/>
-                        <viewControllerLayoutGuide type="bottom" id="dfg-Wo-aRS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ERU-OF-rH4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NMy-u7-fXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="265" y="806"/>
         </scene>
     </scenes>
 </document>

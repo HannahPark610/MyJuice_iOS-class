@@ -10,8 +10,7 @@ import UIKit
 
 var myIndex = 0
 
-var selectedImage: UIImage!
-
+var c: UIImage!
 
 struct cellData {
     
@@ -28,16 +27,16 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         
         arrayOfCellData = [cellData(cell: 1, text: "Apple", image: #imageLiteral(resourceName: "AppleImage")),
-                           cellData(cell: 1, text: "Banana", image: #imageLiteral(resourceName: "banana")),
-                           cellData(cell: 1, text: "Pineapple", image: #imageLiteral(resourceName: "Pineapple")),
-                           cellData(cell: 1, text: "Watermelon", image: #imageLiteral(resourceName: "watermelon")),
-                           cellData(cell: 1, text: "Orange", image: #imageLiteral(resourceName: "orange")),
-                           cellData(cell: 1, text: "Strawberry", image: #imageLiteral(resourceName: "strawberry")),
-                           cellData(cell: 1, text: "Celery", image: #imageLiteral(resourceName: "celery")),
-                           cellData(cell: 1, text: "Tomato", image: #imageLiteral(resourceName: "tomato")),
-                           cellData(cell: 1, text: "Grapes", image: #imageLiteral(resourceName: "grapes")),
-                           cellData(cell: 1, text: "Avocado", image: #imageLiteral(resourceName: "avocado")),
-                           cellData(cell: 1, text: "Carrot", image: #imageLiteral(resourceName: "carrot"))]
+                           cellData(cell: 2, text: "Banana", image: #imageLiteral(resourceName: "banana")),
+                           cellData(cell: 3, text: "Pineapple", image: #imageLiteral(resourceName: "Pineapple")),
+                           cellData(cell: 4, text: "Watermelon", image: #imageLiteral(resourceName: "watermelon")),
+                           cellData(cell: 5, text: "Orange", image: #imageLiteral(resourceName: "orange")),
+                           cellData(cell: 6, text: "Strawberry", image: #imageLiteral(resourceName: "strawberry")),
+                           cellData(cell: 7, text: "Celery", image: #imageLiteral(resourceName: "celery")),
+                           cellData(cell: 8, text: "Tomato", image: #imageLiteral(resourceName: "tomato")),
+                           cellData(cell: 9, text: "Grapes", image: #imageLiteral(resourceName: "grapes")),
+                           cellData(cell: 10, text: "Avocado", image: #imageLiteral(resourceName: "avocado")),
+                           cellData(cell: 11, text: "Carrot", image: #imageLiteral(resourceName: "carrot"))]
     
     
     }
@@ -56,15 +55,6 @@ class TableViewController: UITableViewController{
             cell.Ingredient_label1.text = arrayOfCellData[indexPath.row].text
             
             return cell
-        }
-        else if arrayOfCellData[indexPath.row].cell == 2{
-            let cell = Bundle.main.loadNibNamed("TableViewCell_Ingredient1", owner: self, options: nil)?.first as! TableViewCell_Ingredient1
-            cell.Ingredient1.image = arrayOfCellData[indexPath.row].image
-            cell.Ingredient_label1.text = arrayOfCellData[indexPath.row].text
-            
-            return cell
-            
-    
         }
         else{
             
@@ -87,27 +77,55 @@ class TableViewController: UITableViewController{
         }
         else{
             return 60
-            
         
     }
   }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        myIndex = indexPath.row
-        performSegue(withIdentifier: "showIngredientSegue", sender: self)
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+//    {
+//        myIndex = indexPath.row
+//        performSegue(withIdentifier: "showIngredientSegue", sender: self)
+//    }
+//    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        print("Row \(indexPath.row)selected")
+//        selectedImage = arrayOfCellData[indexPath.row].image
+//        performSegue(withIdentifier: "IngredientDetail", sender: self)
+//    }
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "IngredientDetail") {
+//            _ = segue.destination as! IngredientDetailViewController
+//        }
+//    }
+//    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        print((marker.userData as AnyObject)["placeID"])
+        
+        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
+        
+        IngredientDetailViewController.image = "AppleImage"
+//        IngredientDetailViewController.image = "banana"
+//        IngredientDetailViewController.image = "Pineapple"
+//        IngredientDetailViewController.image = "watermelon"
+//        IngredientDetailViewController.image = "orange"
+//        IngredientDetailViewController.image = "strawberry"
+//        IngredientDetailViewController.image = "celery"
+//        IngredientDetailViewController.image = "tomato"
+//        IngredientDetailViewController.image = "grapes"
+//        IngredientDetailViewController.image = "avocado"
+//        IngredientDetailViewController.image = "carrot"
+        
+        
+        //normal transit page
+        //present(StoreDetailViewController, animated: true, completion: nil)
+        
+        let navi = UINavigationController(rootViewController: IngredientDetailViewController)
+        // setting animation
+        navi.modalTransitionStyle = .crossDissolve
+        present(navi, animated: true, completion: nil)
+
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Row \(indexPath.row)selected")
-        selectedImage = arrayOfCellData[indexPath.row].image
-        performSegue(withIdentifier: "IngredientDetail", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "IngredientDetail") {
-            _ = segue.destination as! IngredientDetailViewController
-        }
-    }
+
 
 }
