@@ -118,9 +118,16 @@ class TableViewController: UITableViewController{
     /* SELECTED ROW */
     override func tableView(_ UItableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
-        
+    if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark
+       {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
         }
+        else
+        {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+        
+    }
 
     
         //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
