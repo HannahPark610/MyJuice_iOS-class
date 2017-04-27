@@ -37,19 +37,23 @@ class TableViewController: UITableViewController{
                            cellData(cell: 9, text: "Grapes", image: #imageLiteral(resourceName: "grapes")),
                            cellData(cell: 10, text: "Avocado", image: #imageLiteral(resourceName: "avocado")),
                            cellData(cell: 11, text: "Carrot", image: #imageLiteral(resourceName: "carrot"))]
-        
+
+
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayOfCellData.count
+//          return numberArray.count;
         
     }
     
+    
+    /* CELL FOR ROW */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        _ = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        _ = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         if arrayOfCellData[indexPath.row].cell == 1{
             
@@ -69,6 +73,9 @@ class TableViewController: UITableViewController{
         }
         
     }
+    
+    
+    /* HEIGHT */
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if arrayOfCellData[indexPath.row].cell == 1{
             return 60
@@ -102,20 +109,36 @@ class TableViewController: UITableViewController{
     //        }
     //    }
     //
+    
+    
+    /* SELECTED ROW */
     override func tableView(_ UItableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        print((marker.userData as AnyObject)["placeID"])
+
+        var selectedItem = indexPath
         
-        let cell = tableView.cellForRow(at: [indexPath.row])
-        _ = arrayOfCellData[indexPath.row]
-        //        TableViewCell_Ingredient1.completed = !TableViewCell_Ingredient1.completed
+//        let selectedcell = arrayOfCellData[indexPath.row] as String
+//        let cellId = selectedcell.components("$%^")
+//        add to self.selectedItems
+//        arrayOfCellData[indexPath[1]] = true
+        
         
         if (c != nil){
-            cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }else{
-            cell?.accessoryType = UITableViewCellAccessoryType.none
-            
+            cell.accessoryType = UITableViewCellAccessoryType.none
+
         }
+    
+        print (selectedItem.row)
         
+    }
+    
+        
+
+    
+    
+    
+    
         //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
         //
         //        _ = tableView.cellForRow(at: indexPath) as! TableViewCell_Ingredient1
@@ -127,32 +150,18 @@ class TableViewController: UITableViewController{
         //            IngredientDetailViewController.image = "banana"
         //        }
         
-        
-        //        return
-        
-        //        IngredientDetailViewController.image = "banana"
-        //        IngredientDetailViewController.image = "Pineapple"
-        //        IngredientDetailViewController.image = "watermelon"
-        //        IngredientDetailViewController.image = "orange"
-        //        IngredientDetailViewController.image = "strawberry"
-        //        IngredientDetailViewController.image = "celery"
-        //        IngredientDetailViewController.image = "tomato"
-        //        IngredientDetailViewController.image = "grapes"
-        //        IngredientDetailViewController.image = "avocado"
-        //        IngredientDetailViewController.image = "carrot"
-        
-        
+    
         //normal transit page
         //present(StoreDetailViewController, animated: true, completion: nil)
         
         
-        // set next page!
+        /* set next page! */
         //        let navi = UINavigationController(rootViewController: IngredientDetailViewController)
         //        // setting animation
         //        navi.modalTransitionStyle = .crossDissolve
         //        present(navi, animated: true, completion: nil)
         
-    }
+
     
     //    override func setSelected(_ selected: Bool, animated: Bool) {
     //        super.setSelected(selected, animated: animated)

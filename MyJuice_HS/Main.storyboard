@@ -6,15 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
         <scene sceneID="cBY-lw-XxV">
             <objects>
-                <tableViewController id="OJh-7O-Obw" customClass="TableViewController" customModule="MyJuice_HS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRR-IN-EXK">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="OJh-7O-Obw" customClass="TableViewController" customModule="MyJuice_HS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRR-IN-EXK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -23,9 +22,6 @@
                             <outlet property="delegate" destination="OJh-7O-Obw" id="EVY-Pz-N9N"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="33r-fT-xWf" kind="show" identifier="showIngredientSegue" id="ZMy-2f-3SF"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mja-LZ-Q1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,8 +46,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="MoveCustomCell1" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-b0-TRW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="MoveCustomCell1" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-b0-TRW">
                                 <rect key="frame" x="66" y="182" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCr-ya-NyU">
                                 <rect key="frame" x="209" y="182" width="100" height="100"/>
@@ -68,6 +65,29 @@
                                 <color key="textColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="bottom" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-Ct-nis">
+                                <rect key="frame" x="239" y="565" width="70" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="UdF-ah-Io9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="bottom" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNp-3i-GPz">
+                                <rect key="frame" x="66" y="565" width="70" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Kq8-hF-Kh0"/>
+                                    <constraint firstAttribute="height" constant="30" id="nuS-fy-7jp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Before">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gM6-9S-fIh">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -77,31 +97,8 @@
                                     <tabBarItem systemItem="more" id="uuh-Tp-lIi"/>
                                 </items>
                             </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-Gw-Nst">
-                                <rect key="frame" x="72" y="584" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Before">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcl-4Y-mc1">
-                                <rect key="frame" x="265" y="584" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pJo-b0-TRW" firstAttribute="centerY" secondItem="AkZ-ha-eib" secondAttribute="centerY" id="HPE-hL-Vdx"/>
-                            <constraint firstItem="pJo-b0-TRW" firstAttribute="leading" secondItem="AkZ-ha-eib" secondAttribute="leadingMargin" constant="50" id="jzJ-So-5eV"/>
-                            <constraint firstItem="pJo-b0-TRW" firstAttribute="top" secondItem="And-zn-LoE" secondAttribute="bottom" constant="162" id="ko7-ed-gmU"/>
-                            <constraint firstItem="pJo-b0-TRW" firstAttribute="centerX" secondItem="AkZ-ha-eib" secondAttribute="centerX" id="oce-Yh-eJM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pJo-b0-TRW" secondAttribute="trailing" constant="193" id="vUp-0H-Abt"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="Ingredient1" destination="pJo-b0-TRW" id="9fj-Af-M6c"/>

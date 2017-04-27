@@ -19,9 +19,13 @@ class IngredientDetailViewController: UIViewController {
     
     @IBOutlet var IngredientPrice: UILabel!
     
+//    var numberArray = NSMutableArray()
+//    var selectedArray=NSMutableArray()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(self.image!)
         
         Ingredient1.image = UIImage(named: self.image! )
@@ -29,3 +33,4 @@ class IngredientDetailViewController: UIViewController {
     }
     
 }
+
