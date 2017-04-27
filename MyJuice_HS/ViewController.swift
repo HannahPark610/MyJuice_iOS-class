@@ -22,11 +22,11 @@ struct cellData {
 
 class TableViewController: UITableViewController{
     
-    var arrayOfCellData = [cellData]()
+    var arrayOfCellDatas = [cellData]()
     
     override func viewDidLoad() {
         
-        arrayOfCellData = [cellData(cell: 1, text: "Apple", image: #imageLiteral(resourceName: "AppleImage")),
+    self.arrayOfCellDatas = [cellData(cell: 1, text: "Apple", image: #imageLiteral(resourceName: "AppleImage")),
                            cellData(cell: 2, text: "Banana", image: #imageLiteral(resourceName: "banana")),
                            cellData(cell: 3, text: "Pineapple", image: #imageLiteral(resourceName: "Pineapple")),
                            cellData(cell: 4, text: "Watermelon", image: #imageLiteral(resourceName: "watermelon")),
@@ -42,32 +42,23 @@ class TableViewController: UITableViewController{
         
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return arrayOfCellData.count
-//          return numberArray.count;
-        
-    }
-    
     
     /* CELL FOR ROW */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        _ = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        if arrayOfCellData[indexPath.row].cell == 1{
+        if arrayOfCellDatas[indexPath.row].cell == 1{
             
             let cell = Bundle.main.loadNibNamed("TableViewCell_Ingredient1", owner: self, options: nil)?.first as! TableViewCell_Ingredient1
-            cell.Ingredient1.image = arrayOfCellData[indexPath.row].image
-            cell.Ingredient_label1.text = arrayOfCellData[indexPath.row].text
+            cell.Ingredient1.image = arrayOfCellDatas[indexPath.row].image
+            cell.Ingredient_label1.text = arrayOfCellDatas[indexPath.row].text
             
             return cell
         }
         else{
             
             let cell = Bundle.main.loadNibNamed("TableViewCell_Ingredient1", owner: self, options: nil)?.first as! TableViewCell_Ingredient1
-            cell.Ingredient1.image = arrayOfCellData[indexPath.row].image
-            cell.Ingredient_label1.text = arrayOfCellData[indexPath.row].text
+            cell.Ingredient1.image = arrayOfCellDatas[indexPath.row].image
+            cell.Ingredient_label1.text = arrayOfCellDatas[indexPath.row].text
             
             return cell
         }
@@ -75,13 +66,26 @@ class TableViewController: UITableViewController{
     }
     
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return arrayOfCellDatas.count
+        
+    }
+    
+    
     /* HEIGHT */
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if arrayOfCellData[indexPath.row].cell == 1{
+        if arrayOfCellDatas[indexPath.row].cell == 1{
             return 60
             
         }
-        else if arrayOfCellData[indexPath.row].cell == 2{
+        else if arrayOfCellDatas[indexPath.row].cell == 2{
             return 60
             
         }
@@ -99,7 +103,7 @@ class TableViewController: UITableViewController{
     //
     //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     //        print("Row \(indexPath.row)selected")
-    //        selectedImage = arrayOfCellData[indexPath.row].image
+    //        selectedImage = arrayOfCellDatas[indexPath.row].image
     //        performSegue(withIdentifier: "IngredientDetail", sender: self)
     //    }
     //
@@ -113,31 +117,11 @@ class TableViewController: UITableViewController{
     
     /* SELECTED ROW */
     override func tableView(_ UItableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        var selectedItem = indexPath
         
-//        let selectedcell = arrayOfCellData[indexPath.row] as String
-//        let cellId = selectedcell.components("$%^")
-//        add to self.selectedItems
-//        arrayOfCellData[indexPath[1]] = true
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
         
-        
-        if (c != nil){
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-        }else{
-            cell.accessoryType = UITableViewCellAccessoryType.none
-
         }
-    
-        print (selectedItem.row)
-        
-    }
-    
-        
 
-    
-    
-    
     
         //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
         //
