@@ -75,6 +75,7 @@ class TableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayOfCellDatas.count
+//        if [arrayOfCellDatas.count > 3] return nil;
         
     }
     
@@ -118,6 +119,20 @@ class TableViewController: UITableViewController{
     /* SELECTED ROW */
     override func tableView(_ UItableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                cell.accessoryType = .checkmark
+//            }
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                cell.accessoryType = .none
+//            }
+//        else {
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                cell.accessoryType = .checkmark
+//            }
+//        }
+//    }
+    
+
     if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark
        {
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
@@ -126,11 +141,25 @@ class TableViewController: UITableViewController{
         {
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
         }
-        
-        if ([multiOptions, count] > 3) return nil;
-    }
+      }
+
+    
+//    func tableView(_ UItableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 3 {
+//        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none
+//        {
+//            return
+//            }
+//    }
+
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 3 {
+            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+            }
+        }
     
     
+
         //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
         //
         //        _ = tableView.cellForRow(at: indexPath) as! TableViewCell_Ingredient1
@@ -163,5 +192,5 @@ class TableViewController: UITableViewController{
     //            check.image = UIImage(named:"banana")
     //
     //        }
-    
+
 }
