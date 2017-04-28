@@ -127,8 +127,9 @@ class TableViewController: UITableViewController{
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
+        if ([multiOptions, count] > 3) return nil;
     }
-
+    
     
         //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
         //

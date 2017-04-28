@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ye7-op-PBJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="CART" id="Fln-De-ALY"/>
+                            </items>
+                        </toolbar>
                         <connections>
                             <outlet property="dataSource" destination="OJh-7O-Obw" id="O7X-Ez-f5Q"/>
                             <outlet property="delegate" destination="OJh-7O-Obw" id="EVY-Pz-N9N"/>

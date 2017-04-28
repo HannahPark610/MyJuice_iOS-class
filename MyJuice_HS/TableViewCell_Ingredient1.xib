@@ -47,7 +47,7 @@
                 <outlet property="Ingredient1" destination="PGr-1q-Mws" id="T9S-Ch-EgG"/>
                 <outlet property="Ingredient_label1" destination="tvd-Gv-L1b" id="e3I-an-FJw"/>
             </connections>
-            <point key="canvasLocation" x="25" y="59"/>
+            <point key="canvasLocation" x="-63" y="23"/>
         </tableViewCell>
     </objects>
 </document>
