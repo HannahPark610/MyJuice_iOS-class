@@ -12,6 +12,8 @@ var myIndex = 0
 
 var c: UIImage!
 
+var selectedItems = [Int]()
+
 struct cellData {
     
     let cell : Int!
@@ -75,7 +77,6 @@ class TableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayOfCellDatas.count
-//        if [arrayOfCellDatas.count > 3] return nil;
         
     }
     
@@ -116,6 +117,24 @@ class TableViewController: UITableViewController{
     //
     
     
+    /* Will Select Row */
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        
+        if let sr = tableView.indexPathsForSelectedRows {
+            if sr.count <= 3 {
+                let alertController = UIAlertController(title: "Oops", message:
+                    "You are limited to \(3) selections", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                }))
+                self.present(alertController, animated: true, completion: nil)
+                
+                return nil
+            }
+        }
+        
+        return indexPath
+    }
+    
     /* SELECTED ROW */
     override func tableView(_ UItableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -131,8 +150,10 @@ class TableViewController: UITableViewController{
 //            }
 //        }
 //    }
-    
-
+        print(selectedItems.count)
+        if selectedItems.count <= 2
+        {
+            print("Up to 3 Items!")
     if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark
        {
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
@@ -140,8 +161,11 @@ class TableViewController: UITableViewController{
         else
         {
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+            selectedItems.append(indexPath.row)
         }
+            
       }
+    }
 
     
 //    func tableView(_ UItableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -152,45 +176,46 @@ class TableViewController: UITableViewController{
 //            }
 //    }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 3 {
-            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-            }
-        }
     
     
+    /* Deselect Row */
+//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//        print("deselected  \(arrayOfCellDatas[indexPath.row])")
+//        
+//        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+//            cell.accessoryType = .none
+//        }
+//        
+//        if let sr = tableView.indexPathsForSelectedRows {
+//            print("didDeselectRowAtIndexPath selected rows:\(sr)")
+//        }
+//    }
+    
+//        if arrayOfCellDatas.count <= 3 {
+//            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+//      if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+//          cell.accessoryType = .none
+//            }
+//        
+//    }
 
-        //        let IngredientDetailViewController: IngredientDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IngredientDetail") as! IngredientDetailViewController
-        //
-        //        _ = tableView.cellForRow(at: indexPath) as! TableViewCell_Ingredient1
-        
-        //        IngredientDetailViewController.image = "AppleImage"
-        //        if (c != nil){
-        //            IngredientDetailViewController.image = "AppleImage"
-        //        } else {
-        //            IngredientDetailViewController.image = "banana"
-        //        }
         
     
-        //normal transit page
-        //present(StoreDetailViewController, animated: true, completion: nil)
-        
-        
         /* set next page! */
-        //        let navi = UINavigationController(rootViewController: IngredientDetailViewController)
-        //        // setting animation
-        //        navi.modalTransitionStyle = .crossDissolve
-        //        present(navi, animated: true, completion: nil)
-        
+//         let navi = UINavigationController(rootViewController: IngredientDetailViewController)
+//         //setting animation
+//         navi.modalTransitionStyle = .crossDissolve
+//         present(navi, animated: true, completion: nil)
+//        
 
     
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //        if selected{
-    //            check.image = UIImage(named:"AppleImage")
-    //        }else{
-    //            check.image = UIImage(named:"banana")
-    //
-    //        }
+//        override func setSelected(_ selected: Bool, animated: Bool) {
+//            super.setSelected(selected, animated: animated)
+//            if selected{
+//                check.image = UIImage(named:"AppleImage")
+//            }else{
+//                check.image = UIImage(named:"banana")
+//    
+//            }
 
 }
