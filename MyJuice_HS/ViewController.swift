@@ -150,7 +150,8 @@ class TableViewController: UITableViewController{
 //            }
 //        }
 //    }
-        print(selectedItems.count)
+    
+    print(selectedItems.count)
         if selectedItems.count <= 2
         {
             print("Up to 3 Items!")
@@ -163,7 +164,6 @@ class TableViewController: UITableViewController{
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
             selectedItems.append(indexPath.row)
         }
-            
       }
     }
 
