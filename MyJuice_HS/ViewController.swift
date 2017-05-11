@@ -67,6 +67,9 @@ class TableViewController: UITableViewController{
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        createAlert(titleText: "UP TO 3 ITEMS!", messageText: "NEXT")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,6 +171,23 @@ class TableViewController: UITableViewController{
     }
 
     
+    func createAlert(titleText: String, messageText: String ){
+        
+        let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+    }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+  }
+    
+    
+}
+    
+    
+    
+    
 //    func tableView(_ UItableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 //        if indexPath.row == 3 {
 //        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none
@@ -218,4 +238,3 @@ class TableViewController: UITableViewController{
 //    
 //            }
 
-}
