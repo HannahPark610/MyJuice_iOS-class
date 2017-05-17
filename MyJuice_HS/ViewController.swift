@@ -22,7 +22,9 @@ struct cellData {
     
 }
 
-class TableViewController: UITableViewController{
+class TableViewController: UITableViewController {
+
+//UICollectionViewDelegate, UICollectionViewDataSource 
     
     var arrayOfCellDatas = [cellData]()
     
@@ -40,9 +42,13 @@ class TableViewController: UITableViewController{
                            cellData(cell: 10, text: "Avocado", image: #imageLiteral(resourceName: "avocado")),
                            cellData(cell: 11, text: "Carrot", image: #imageLiteral(resourceName: "carrot"))]
 
-
-        
     }
+    
+    /* collection View Cell _ Bottles */
+    
+    var imageName_bottles = [UIImage(named:"1"),UIImage(named:"2"),UIImage(named:"3"),UIImage(named:"4"),UIImage(named:"5"),UIImage(named:"6"),UIImage(named:"7"),UIImage(named:"8")]
+    var nameArray = ["name 1","name 2","name 3","name 4","name 5","name 6","name 7","name 8"]
+    
     
     
     /* CELL FOR ROW */
@@ -68,7 +74,7 @@ class TableViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        createAlert(titleText: "UP TO 3 ITEMS!", messageText: "NEXT")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -154,36 +160,98 @@ class TableViewController: UITableViewController{
 //        }
 //    }
     
-    print(selectedItems.count)
-        if selectedItems.count <= 2
-        {
+    
+        print(selectedItems.count)
             print("Up to 3 Items!")
-    if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark
-       {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
-        }
-        else
+        
+            if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark
+            {
+                self.unselectCell(indexPath: indexPath)
+            }
+            else
+            {
+                if (selectedItems.count < 3) {
+                        self.selectCell(indexPath: indexPath)
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "You can only select up to 3 items", message: "", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        alert.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        if selectedItems.count == 3
         {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
-            selectedItems.append(indexPath.row)
+            createAlert(titleText: "3 Items Selected", messageText: "")
         }
-      }
     }
 
+    func selectCell(indexPath:IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        selectedItems.append(indexPath.row)
+    }
+    
+    func unselectCell(indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        selectedItems.remove(at: selectedItems.index(of: indexPath.row)!)
+    }
     
     func createAlert(titleText: String, messageText: String ){
         
         let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
     }))
+        
+        alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (action) in
+//            self.nextView(sender: self)
+            self.performSegue(withIdentifier: "testSegue", sender: self)
+        }))
         
         self.present(alert, animated: true, completion: nil)
         
   }
     
+    @IBAction func nextView(sender: Any) {
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        let target = segue.destination as? IngredientDetailViewController
+        
+        target?.selectedItems = selectedItems
+        
+        target?.ingredient1.image = self.arrayOfCellDatas[selectedItems[0]].image
+        target?.ingredient2.image = self.arrayOfCellDatas[selectedItems[1]].image
+        target?.ingredient3.image = self.arrayOfCellDatas[selectedItems[2]].image
+        
+        print("prepare done")
+    }
+
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return nameArray.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+//    {
+//    
+//    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell_Bottles", for: indexPath) as! CollectionViewCell_Bottles
+//   
+//    
+//    }
 }
+
+
     
     
     

@@ -15,6 +15,8 @@
 		3F91A6D41E9856BA008FFBE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91A6D31E9856BA008FFBE8 /* ViewController.swift */; };
 		3F91A6D91E9856BA008FFBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F91A6D81E9856BA008FFBE8 /* Assets.xcassets */; };
 		3F91A6DC1E9856BA008FFBE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F91A6DA1E9856BA008FFBE8 /* LaunchScreen.storyboard */; };
+		ED5F9D9F1EC7B6C700FA4B1F /* ViewController_bottles.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F9D9E1EC7B6C700FA4B1F /* ViewController_bottles.swift */; };
+		ED5F9DC51EC7C1DE00FA4B1F /* CollectionViewCell_Bottles.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F9DC41EC7C1DE00FA4B1F /* CollectionViewCell_Bottles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		3F91A6DD1E9856BA008FFBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F91A6E21E9856BA008FFBE8 /* MyJuice_HSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyJuice_HSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F91A6E81E9856BA008FFBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5F9D9E1EC7B6C700FA4B1F /* ViewController_bottles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_bottles.swift; sourceTree = "<group>"; };
+		ED5F9DC41EC7C1DE00FA4B1F /* CollectionViewCell_Bottles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell_Bottles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,9 @@
 				3F551B241E9C358200BD304A /* TableViewCell_Ingredient1.swift */,
 				3F551B251E9C358200BD304A /* TableViewCell_Ingredient1.xib */,
 				28D188601E9DC478002E23CE /* Main.storyboard */,
+				ED5F9D9E1EC7B6C700FA4B1F /* ViewController_bottles.swift */,
 				3F91A6D81E9856BA008FFBE8 /* Assets.xcassets */,
+				ED5F9DC41EC7C1DE00FA4B1F /* CollectionViewCell_Bottles.swift */,
 				3F91A6DA1E9856BA008FFBE8 /* LaunchScreen.storyboard */,
 				3F91A6DD1E9856BA008FFBE8 /* Info.plist */,
 			);
@@ -207,8 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F91A6D41E9856BA008FFBE8 /* ViewController.swift in Sources */,
+				ED5F9D9F1EC7B6C700FA4B1F /* ViewController_bottles.swift in Sources */,
 				3F551B261E9C358200BD304A /* TableViewCell_Ingredient1.swift in Sources */,
 				28FE050F1E9F09F40034F938 /* IngredientDetailViewController.swift in Sources */,
+				ED5F9DC51EC7C1DE00FA4B1F /* CollectionViewCell_Bottles.swift in Sources */,
 				3F91A6D21E9856BA008FFBE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
