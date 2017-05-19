@@ -320,21 +320,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="YOU CHOOSE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-r2-Bn7">
-                                <rect key="frame" x="120" y="103" width="145" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="YOU CHOOSE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-r2-Bn7">
+                                <rect key="frame" x="120" y="103" width="145" height="32"/>
                                 <color key="textColor" red="1" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-DD-YMR">
-                                <rect key="frame" x="66" y="182" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-DD-YMR">
+                                <rect key="frame" x="66" y="184" width="100" height="98"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="WNw-MD-0zN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCr-ya-NyU">
-                                <rect key="frame" x="209" y="182" width="100" height="100"/>
+                                <rect key="frame" x="209" y="184" width="100" height="99"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-I1-ELr">
                                 <rect key="frame" x="137" y="318" width="100" height="100"/>
@@ -380,6 +380,7 @@
                         <constraints>
                             <constraint firstItem="dqZ-lk-xqm" firstAttribute="top" secondItem="bNp-3i-GPz" secondAttribute="bottom" constant="72" id="2px-rq-XUN"/>
                             <constraint firstItem="bNp-3i-GPz" firstAttribute="top" secondItem="2B1-DD-YMR" secondAttribute="bottom" constant="283" id="2r6-gm-NtN"/>
+                            <constraint firstItem="IQD-r2-Bn7" firstAttribute="leading" secondItem="AkZ-ha-eib" secondAttribute="leadingMargin" constant="104" id="37J-yQ-vo5"/>
                             <constraint firstItem="IA8-I1-ELr" firstAttribute="top" secondItem="2B1-DD-YMR" secondAttribute="bottom" constant="36" id="4Q9-nN-jpa"/>
                             <constraint firstItem="ahL-Ct-nis" firstAttribute="top" secondItem="uCr-ya-NyU" secondAttribute="bottom" constant="283" id="8p4-SG-Rwn"/>
                             <constraint firstItem="dqZ-lk-xqm" firstAttribute="top" secondItem="ahL-Ct-nis" secondAttribute="bottom" constant="72" id="BC0-Ui-6Hv"/>
@@ -388,7 +389,10 @@
                             <constraint firstItem="2B1-DD-YMR" firstAttribute="top" secondItem="IQD-r2-Bn7" secondAttribute="bottom" constant="49" id="RF9-U1-Kpd"/>
                             <constraint firstItem="ahL-Ct-nis" firstAttribute="leading" secondItem="bNp-3i-GPz" secondAttribute="trailing" constant="103" id="Wf0-Rw-tak"/>
                             <constraint firstItem="2B1-DD-YMR" firstAttribute="leading" secondItem="AkZ-ha-eib" secondAttribute="leadingMargin" constant="50" id="d9f-i5-kwr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IQD-r2-Bn7" secondAttribute="trailing" constant="94" id="kfO-Ks-uFI"/>
+                            <constraint firstItem="uCr-ya-NyU" firstAttribute="top" secondItem="IQD-r2-Bn7" secondAttribute="bottom" constant="49" id="nM5-1a-mNV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ahL-Ct-nis" secondAttribute="trailing" constant="50" id="plM-Y9-zbz"/>
+                            <constraint firstItem="IQD-r2-Bn7" firstAttribute="top" secondItem="And-zn-LoE" secondAttribute="bottom" constant="83" id="u7S-L9-LKG"/>
                             <constraint firstItem="ahL-Ct-nis" firstAttribute="leading" secondItem="bNp-3i-GPz" secondAttribute="trailing" constant="103" id="vxE-Rg-vTb"/>
                         </constraints>
                     </view>
@@ -480,7 +484,7 @@
         <image name="maju" width="470" height="102"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rIu-hg-zeC"/>
-        <segue reference="piu-Tq-zDB"/>
+        <segue reference="J0I-79-1VP"/>
+        <segue reference="nIz-GU-aB8"/>
     </inferredMetricsTieBreakers>
 </document>
