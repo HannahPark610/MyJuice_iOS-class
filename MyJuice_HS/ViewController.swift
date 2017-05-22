@@ -219,6 +219,9 @@ class TableViewController: UITableViewController {
     
     @IBAction func nextView(sender: Any) {
         
+        self.tableView.register(UINib(nibName:"TableCell_Ingredient", bundle: nil), forCellReuseIdentifier: "TableCell_Ingredient")
+
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

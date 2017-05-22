@@ -21,8 +21,12 @@ class IngredientDetailViewController: UIViewController {
     var price: Double?
     
     @IBOutlet weak var ingredient1: UIImageView!
+
     @IBOutlet weak var ingredient2: UIImageView!
+    
     @IBOutlet weak var ingredient3: UIImageView!
+    
+    
     
 //    var numberArray = NSMutableArray()
 //    var selectedArray=NSMutableArray()
