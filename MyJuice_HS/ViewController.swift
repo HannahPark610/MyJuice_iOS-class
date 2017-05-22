@@ -232,9 +232,9 @@ class TableViewController: UITableViewController {
         
         target?.selectedItems = selectedItems
         
-        target?.ingredient1.image = self.arrayOfCellDatas[selectedItems[0]].image
-        target?.ingredient2.image = self.arrayOfCellDatas[selectedItems[1]].image
-        target?.ingredient3.image = self.arrayOfCellDatas[selectedItems[2]].image
+//        target?.ingredient1.image = self.arrayOfCellDatas[selectedItems[0]].image
+//        target?.ingredient2.image = self.arrayOfCellDatas[selectedItems[1]].image
+//        target?.ingredient3.image = self.arrayOfCellDatas[selectedItems[2]].image
         
         print("prepare done")
     }

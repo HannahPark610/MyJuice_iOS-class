@@ -39,11 +39,11 @@ class IngredientDetailViewController: UIViewController {
         self.addItemPrice(index: selectedItems[1])
         self.addItemPrice(index: selectedItems[2])
         
-        print("prepare done")
-        
+//        print("prepare done")
+
         print(self.image!)
-        
-//        self.Ingredient2.image = UIImage(named: self.image! )
+//
+//        self.ingredient1.image = UIImage(named: self.image! )
         
     }
     
