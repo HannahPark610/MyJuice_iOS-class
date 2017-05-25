@@ -28,27 +28,23 @@ class TableViewController: UITableViewController {
     
     var arrayOfCellDatas = [cellData]()
     
+//    var imageViewArray = [UIImage]()
+    
     override func viewDidLoad() {
         
-    self.arrayOfCellDatas = [cellData(cell: 1, text: "Apple", image: #imageLiteral(resourceName: "AppleImage")),
-                           cellData(cell: 2, text: "Banana", image: #imageLiteral(resourceName: "banana")),
-                           cellData(cell: 3, text: "Pineapple", image: #imageLiteral(resourceName: "Pineapple")),
-                           cellData(cell: 4, text: "Watermelon", image: #imageLiteral(resourceName: "watermelon")),
-                           cellData(cell: 5, text: "Orange", image: #imageLiteral(resourceName: "orange")),
-                           cellData(cell: 6, text: "Strawberry", image: #imageLiteral(resourceName: "strawberry")),
-                           cellData(cell: 7, text: "Celery", image: #imageLiteral(resourceName: "celery")),
-                           cellData(cell: 8, text: "Tomato", image: #imageLiteral(resourceName: "tomato")),
-                           cellData(cell: 9, text: "Grapes", image: #imageLiteral(resourceName: "grapes")),
-                           cellData(cell: 10, text: "Avocado", image: #imageLiteral(resourceName: "avocado")),
-                           cellData(cell: 11, text: "Carrot", image: #imageLiteral(resourceName: "carrot"))]
-
+    self.arrayOfCellDatas = [cellData(cell: 1, text: "Apple(2.50)", image: #imageLiteral(resourceName: "AppleImage")),
+                           cellData(cell: 2, text: "Banana(2.50)", image: #imageLiteral(resourceName: "banana")),
+                           cellData(cell: 3, text: "Pineapple(3.00)", image: #imageLiteral(resourceName: "Pineapple")),
+                           cellData(cell: 4, text: "Watermelon(3.00)", image: #imageLiteral(resourceName: "watermelon")),
+                           cellData(cell: 5, text: "Orange(3.00)", image: #imageLiteral(resourceName: "orange")),
+                           cellData(cell: 6, text: "Strawberry(3.10)", image: #imageLiteral(resourceName: "strawberry")),
+                           cellData(cell: 7, text: "Celery(3.10)", image: #imageLiteral(resourceName: "celery")),
+                           cellData(cell: 8, text: "Tomato(2.75)", image: #imageLiteral(resourceName: "tomato")),
+                           cellData(cell: 9, text: "Grapes(2.75)", image: #imageLiteral(resourceName: "grapes")),
+                           cellData(cell: 10, text: "Avocado(2.50)", image: #imageLiteral(resourceName: "avocado")),
+                           cellData(cell: 11, text: "Carrot(2.00)", image: #imageLiteral(resourceName: "carrot"))]
+    
     }
-    
-    /* collection View Cell _ Bottles */
-    
-    var imageName_bottles = [UIImage(named:"1"),UIImage(named:"2"),UIImage(named:"3"),UIImage(named:"4"),UIImage(named:"5"),UIImage(named:"6"),UIImage(named:"7"),UIImage(named:"8")]
-    var nameArray = ["name 1","name 2","name 3","name 4","name 5","name 6","name 7","name 8"]
-    
     
     
     /* CELL FOR ROW */
@@ -238,8 +234,9 @@ class TableViewController: UITableViewController {
         
         print("prepare done")
     }
+}
 
-    
+
     
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return nameArray.count
@@ -252,7 +249,7 @@ class TableViewController: UITableViewController {
 //   
 //    
 //    }
-}
+
 
 
     
@@ -308,4 +305,7 @@ class TableViewController: UITableViewController {
 //                check.image = UIImage(named:"banana")
 //    
 //            }
+
+
+
 

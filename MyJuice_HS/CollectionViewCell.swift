@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CollectionViewCell_Bottles: UICollectionViewCell {
-    @IBOutlet weak var bottle1: UIImageView!
+class CollectionViewCell: UICollectionViewCell {
+
     
-    @IBOutlet weak var myBottleA: UILabel!
+    
 }
