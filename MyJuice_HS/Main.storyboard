@@ -426,7 +426,7 @@
         <scene sceneID="dtL-Md-fla">
             <objects>
                 <collectionViewController id="Ldg-i4-wMB" customClass="ColletionViewController" customModule="MyJuice_HS" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jZ2-mk-u7j">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jZ2-mk-u7j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -479,6 +479,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkI-il-cno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="341.60000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Kjl-WW-iDi">
+            <objects>
+                <tableViewController id="WHa-cb-22D" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iDC-9l-JM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SvM-Oc-xUC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SvM-Oc-xUC" id="uJu-wQ-ghF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WHa-cb-22D" id="iyn-0G-CDc"/>
+                            <outlet property="delegate" destination="WHa-cb-22D" id="NV8-uF-XOc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="k63-Vw-Yyh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-Yb-v0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="905"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DKg-xd-La0">
+            <objects>
+                <navigationController id="XLn-Fd-n7S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lgO-T2-HI6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WHa-cb-22D" kind="relationship" relationship="rootViewController" id="WIz-Ji-z2k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILd-R1-lqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463" y="905"/>
         </scene>
     </scenes>
     <resources>
