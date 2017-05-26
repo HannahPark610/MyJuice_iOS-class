@@ -426,7 +426,7 @@
         <scene sceneID="dtL-Md-fla">
             <objects>
                 <collectionViewController id="Ldg-i4-wMB" customClass="ColletionViewController" customModule="MyJuice_HS" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jZ2-mk-u7j">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jZ2-mk-u7j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -485,24 +485,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkI-il-cno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="358" y="142"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="sBu-qG-gb7">
-            <objects>
-                <viewController id="guo-DH-LR9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O4h-sR-DnW"/>
-                        <viewControllerLayoutGuide type="bottom" id="i4H-tg-315"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="koj-v2-IR6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qME-UD-EdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1122" y="139"/>
         </scene>
     </scenes>
     <resources>

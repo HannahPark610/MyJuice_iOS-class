@@ -14,7 +14,7 @@ var c: UIImage!
 
 var selectedItems = [Int]()
 
-var selectedbottle = [Int]()
+//var selectedbottle = [Int]()
 
 struct cellData {
     
@@ -246,15 +246,13 @@ class TableViewController: UITableViewController, UICollectionViewDelegate   {
 
 
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-    return bottleImages.count
+        return bottleImages.count
 
     }
 
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! UICollectionViewCell
-    
 //  var myImageView = cell.viewWithTag(1) as! UIImageView
     cell.myImageView.image = UIImage(named: bottleImages[indexPath.row])
     

@@ -39,7 +39,7 @@ class ColletionViewController: UICollectionViewController {
     }
 
 
-///   override func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section: Int) {
+//   override func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section: Int) {
         
 //    return bottleImages.count
     }
