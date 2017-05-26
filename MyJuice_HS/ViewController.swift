@@ -14,6 +14,8 @@ var c: UIImage!
 
 var selectedItems = [Int]()
 
+var selectedbottle = [Int]()
+
 struct cellData {
     
     let cell : Int!
@@ -22,13 +24,16 @@ struct cellData {
     
 }
 
-class TableViewController: UITableViewController {
-
-//UICollectionViewDelegate, UICollectionViewDataSource 
+class TableViewController: UITableViewController, UICollectionViewDelegate   {
+    //UICollectionViewDataSource
+    
+    
     
     var arrayOfCellDatas = [cellData]()
     
-//    var imageViewArray = [UIImage]()
+    var bottleImages = [UIImage]()
+    
+//    var bottleImages = [#imageLiteral(resourceName: "bottle1"),#imageLiteral(resourceName: "bottle2"),#imageLiteral(resourceName: "bottle3"),#imageLiteral(resourceName: "bottle4"),#imageLiteral(resourceName: "bottle6"),#imageLiteral(resourceName: "bottle7"),#imageLiteral(resourceName: "bottle8")]
     
     override func viewDidLoad() {
         
@@ -237,25 +242,30 @@ class TableViewController: UITableViewController {
 }
 
 
+/* collection View */
+
+
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+    return bottleImages.count
+
+    }
+
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return nameArray.count
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
-//    {
-//    
-//    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell_Bottles", for: indexPath) as! CollectionViewCell_Bottles
-//   
-//    
-//    }
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! UICollectionViewCell
+    
+//  var myImageView = cell.viewWithTag(1) as! UIImageView
+    cell.myImageView.image = UIImage(named: bottleImages[indexPath.row])
+    
+    return cell
+}
+
+//print(selectedbottle.count)
 
 
 
-    
-    
-    
-    
+
 //    func tableView(_ UItableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 //        if indexPath.row == 3 {
 //        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none
@@ -305,7 +315,4 @@ class TableViewController: UITableViewController {
 //                check.image = UIImage(named:"banana")
 //    
 //            }
-
-
-
 
